@@ -117,7 +117,8 @@ define quote
 endef
 
 # Toolchain commands
-CC      := $(call quote,$(GNU_INSTALL_ROOT)$(GNU_PREFIX)-gcc)
+#CC      := $(call quote,$(GNU_INSTALL_ROOT)$(GNU_PREFIX)-gcc)
+CC      := $(call quote,wllvm)
 CXX     := $(call quote,$(GNU_INSTALL_ROOT)$(GNU_PREFIX)-c++)
 AS      := $(call quote,$(GNU_INSTALL_ROOT)$(GNU_PREFIX)-as)
 AR      := $(call quote,$(GNU_INSTALL_ROOT)$(GNU_PREFIX)-ar) -r
