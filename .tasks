@@ -5,7 +5,7 @@ ARM_NONE_EABI_TOOLCHAIN_PATH=<root>/../gcc-arm-none-eabi-10.3-2021.10
 
 [project-build]
 #WLLVM_OUTPUT_LEVEL=DEBUG
-command=export LLVM_COMPILER=clang LLVM_COMPILER_PATH=$(+LLVM_DIR)/bin BINUTILS_TARGET_PREFIX=$(+ARM_NONE_EABI_TOOLCHAIN_PATH)/bin/arm-none-eabi && make -j && ls _build/rev_*/nrf52_kbd.out | xargs -n 1 extract-bc && $(+LLVM_DIR)/bin/llvm-dis _build/rev_*/nrf52_kbd.out.bc
+command=export LLVM_COMPILER=clang LLVM_COMPILER_PATH=$(+LLVM_DIR)/bin BINUTILS_TARGET_PREFIX=$(+ARM_NONE_EABI_TOOLCHAIN_PATH)/bin/arm-none-eabi && make -j CC=wllvm && ls _build/rev_*/nrf52_kbd.out | xargs -n 1 extract-bc && $(+LLVM_DIR)/bin/llvm-dis _build/rev_*/nrf52_kbd.out.bc
 cwd=<root>/keyboard/lot60-ble
 errorformat=%f:%l:%m
 #output=terminal
